@@ -13,7 +13,7 @@ var coinChange = function(coins, target) {
   // iterate through each coin: 
   // first make sure it's less than the target amount (don't want to give negative change)
   // then make a recursive call. need to reduce the target in each call by the coin amount that you're checking
-  // don't forget to add one on line 19. This is because the problem asks for the minimum number of coins
+  // don't forget to add one on line 20. This is because the problem asks for the minimum number of coins
   //    if we don't add the one, we're not actually keeping track of how many coins we're using.
   coins.forEach(coin => {
     if (coin <= target) {
@@ -24,7 +24,8 @@ var coinChange = function(coins, target) {
     console.log('====');
     
   })
-
+  console.log(...numCoins);
+  
   return Math.min(...numCoins)
 };
 
@@ -45,7 +46,8 @@ function minChange(coins, target, memo={}) {
       numCoins.push(minChange(coins, target - coin, memo) + 1)
     }
   })
-
+  console.log(...numCoins);
+  
   memo[target] = Math.min(...numCoins)
   return memo[target]
 }

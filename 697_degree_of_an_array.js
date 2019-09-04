@@ -94,9 +94,9 @@ const findShortestSub = function(nums) {
   }
   let res = nums.length 
  
-  for (let count in counts) {
-    if (counts[count] === max) {
-      res = Math.min(res, lastIdxs[count] - firstIdxs[count] + 1)
+  for (let k in counts) {
+    if (counts[k] === max) {
+      res = Math.min(res, lastIdxs[k] - firstIdxs[k] + 1)
     }
   }
   return res;
