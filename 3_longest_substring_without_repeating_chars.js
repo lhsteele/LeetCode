@@ -38,7 +38,7 @@ var lengthOfLongestSubstring = function (s) {
       seen.push(s[i]);
       if (seen.length > maxLength) maxLength = seen.length;
     } else {
-      seen = []
+      seen = seen.slice(seen.indexOf(s[i]) + 1, seen.length)
       seen.push(s[i]);
     }
   }
@@ -48,6 +48,7 @@ var lengthOfLongestSubstring = function (s) {
 // console.log(lengthOfLongestSubstring("abcabcbb"))
 // console.log(lengthOfLongestSubstring("bbbbbbb"))
 // console.log(lengthOfLongestSubstring("pwwkew"))
+console.log(lengthOfLongestSubstring("dvdf"))
 
 
 var lengthWithTwoPointers = function (s) {
@@ -68,5 +69,5 @@ var lengthWithTwoPointers = function (s) {
   return Math.max(maxLength, right - left);
 }
 
-console.log(lengthWithTwoPointers("abcabcbb"))
+// console.log(lengthWithTwoPointers("abcabcbb"))
 
