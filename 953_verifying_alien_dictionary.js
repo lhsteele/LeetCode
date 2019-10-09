@@ -54,7 +54,7 @@ var isAlienSorted = function (words, order) {
     } else if (currentCharIdx === prevIdx) {
       while (currentCharIdx >= prevIdx) {
         charIdx++
-        prevIdx = order.indexOf(words[0][charIdx])
+        prevIdx = order.indexOf(words[i - 1][charIdx])
         currentCharIdx = order.indexOf(words[i][charIdx])
       }
       if (currentCharIdx < prevIdx) {
